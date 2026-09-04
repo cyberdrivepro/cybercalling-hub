@@ -1,0 +1,243 @@
+{
+  "name": "🎙️ CyberCalling 2.0 Autonomous Voice AI & Lead Router",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "cybercalling-trigger",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        300
+      ],
+      "id": "node-webhook-trigger",
+      "name": "📥 Inbound Lead Webhook"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 1
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        120
+      ],
+      "id": "node-schedule-trigger",
+      "name": "🕒 Auto-Campaign Trigger"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "phone-assign",
+              "name": "phone",
+              "value": "={{ $json.body?.phone || '+919876543210' }}",
+              "type": "string"
+            },
+            {
+              "id": "name-assign",
+              "name": "name",
+              "value": "={{ $json.body?.name || 'Suraj' }}",
+              "type": "string"
+            },
+            {
+              "id": "msg-assign",
+              "name": "message",
+              "value": "={{ $json.body?.message || 'Hello! This is an automated Voice AI update from your CyberCalling Enterprise system.' }}",
+              "type": "string"
+            },
+            {
+              "id": "prov-assign",
+              "name": "provider",
+              "value": "={{ $json.body?.provider || 'OMNIDIM' }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        420,
+        220
+      ],
+      "id": "node-set-lead",
+      "name": "⚙️ Prepare Lead Payload"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8000/api/v1/n8n/dispatch-call",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"phone\": \"{{ $json.phone }}\",\n  \"name\": \"{{ $json.name }}\",\n  \"message\": \"{{ $json.message }}\",\n  \"provider\": \"{{ $json.provider }}\",\n  \"source\": \"n8n-docker-automation\"\n}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        220
+      ],
+      "id": "node-dispatch-call",
+      "name": "📞 CyberCalling Voice AI Dispatcher"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "hot-lead-check",
+              "leftValue": "={{ $json.lead_score }}",
+              "rightValue": 80,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        900,
+        220
+      ],
+      "id": "node-if-hot-lead",
+      "name": "🔥 Is Hot Lead (Score >= 80)?"
+    },
+    {
+      "parameters": {
+        "chatId": "8405632493",
+        "text": "=🔥 *[HOT LEAD ALERT — CyberCalling Voice AI]*\n\n• *Recipient:* `{{ $json.recipient }}` ({{ $json.customer_name }})\n• *Lead Score:* `{{ $json.lead_score }}/100 🔥`\n• *Call SID:* `{{ $json.call_id }}`\n• *Carrier:* `{{ $json.provider }}`\n• *Status:* `Dispatched Successfully 🟢`\n\n⚡ _Lead is ready for immediate closing!_",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1140,
+        140
+      ],
+      "id": "node-telegram-hot-alert",
+      "name": "🔔 Send Telegram Hot Lead Alert"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    execution_status: \"COMPLETED\",\n    call_id: $input.item.json.call_id,\n    recipient: $input.item.json.recipient,\n    lead_score: $input.item.json.lead_score,\n    is_hot: $input.item.json.is_hot_lead,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1140,
+        320
+      ],
+      "id": "node-log-result",
+      "name": "📊 Format CRM Log Result"
+    }
+  ],
+  "connections": {
+    "📥 Inbound Lead Webhook": {
+      "main": [
+        [
+          {
+            "node": "⚙️ Prepare Lead Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🕒 Auto-Campaign Trigger": {
+      "main": [
+        [
+          {
+            "node": "⚙️ Prepare Lead Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⚙️ Prepare Lead Payload": {
+      "main": [
+        [
+          {
+            "node": "📞 CyberCalling Voice AI Dispatcher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "📞 CyberCalling Voice AI Dispatcher": {
+      "main": [
+        [
+          {
+            "node": "🔥 Is Hot Lead (Score >= 80)?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔥 Is Hot Lead (Score >= 80)?": {
+      "main": [
+        [
+          {
+            "node": "🔔 Send Telegram Hot Lead Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "📊 Format CRM Log Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "🔔 Send Telegram Hot Lead Alert": {
+      "main": [
+        [
+          {
+            "node": "📊 Format CRM Log Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

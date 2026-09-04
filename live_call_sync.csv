@@ -1,0 +1,4 @@
+timestamp,phone,name,status,duration,cost_usd,sentiment,score,recording_url
+2026-08-29 18:30:49,+919876543210,Suraj,completed,0:35,0.07,Positive,95,
+2026-08-29 18:46:51,+919811122233,Valued Customer,completed,0.00:12.00,0.024,Cold / Neutral ⚪,43,https://omnidim.io/api/v1/recording/7200000?token=5a5162fe9f0bb8caf642c90992d37ff4
+2026-08-29 21:32:08,+919876543210,Valued Customer,completed,0.00:11.00,0.022,Interested 🟢,51,https://omnidim.io/api/v1/recording/7201535?token=0948dc37c82d66db491f23951c2ec1c0

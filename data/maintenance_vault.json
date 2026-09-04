@@ -1,0 +1,64 @@
+{
+  "global_maintenance": true,
+  "global_reason": "Emergency Cloud Cluster Scaling & Maintenance",
+  "global_start_time": 1788451658,
+  "global_end_time": 0,
+  "global_duration_mins": 0,
+  "global_duration_sec": 0,
+  "bots": {
+    "caller_bot": {
+      "in_maintenance": true,
+      "reason": "Emergency Cloud Cluster Scaling & Maintenance",
+      "start_time": 1788451658,
+      "end_time": 0,
+      "duration_mins": 0,
+      "duration_sec": 0,
+      "updated_by": "8405632493"
+    },
+    "admin_bot": {
+      "in_maintenance": true,
+      "reason": "Emergency Cloud Cluster Scaling & Maintenance",
+      "start_time": 1788451658,
+      "end_time": 0,
+      "duration_mins": 0,
+      "duration_sec": 0,
+      "updated_by": "8405632493"
+    },
+    "db_bot": {
+      "in_maintenance": true,
+      "reason": "Emergency Cloud Cluster Scaling & Maintenance",
+      "start_time": 1788451658,
+      "end_time": 0,
+      "duration_mins": 0,
+      "duration_sec": 0,
+      "updated_by": "8405632493"
+    },
+    "proxy_bot": {
+      "in_maintenance": true,
+      "reason": "Emergency Cloud Cluster Scaling & Maintenance",
+      "start_time": 1788451658,
+      "end_time": 0,
+      "duration_mins": 0,
+      "duration_sec": 0,
+      "updated_by": "8405632493"
+    },
+    "danger_bot": {
+      "in_maintenance": true,
+      "reason": "Emergency Cloud Cluster Scaling & Maintenance",
+      "start_time": 1788451658,
+      "end_time": 0,
+      "duration_mins": 0,
+      "duration_sec": 0,
+      "updated_by": "8405632493"
+    },
+    "space2_doctor_bot": {
+      "in_maintenance": true,
+      "reason": "Emergency Cloud Cluster Scaling & Maintenance",
+      "start_time": 1788451658,
+      "end_time": 0,
+      "duration_mins": 0,
+      "duration_sec": 0,
+      "updated_by": "8405632493"
+    }
+  }
+}

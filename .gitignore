@@ -1,0 +1,59 @@
+# Environment and secrets
+.env
+.env.*
+.encrypted_vault.bin
+.vault_salt.bin
+.vault_hash.bin
+*.bin
+proxies.txt
+.proxy_pool.txt
+
+# Databases and storage
+*.db
+*.sqlite
+*.sqlite3
+cybercalling_enterprise.db
+data/
+recordings/
+
+# Flat files and temporary stores
+.billing_state.json
+.lead_intelligence.json
+.calendar_appointments.json
+.whatsapp_followups.json
+.payment_links.json
+.telegram_chat_id.txt
+live_call_sync.csv
+*.csv
+
+# Media & sample artifacts
+*.mp3
+*.wav
+*.ogg
+*.png
+*.jpg
+*.jpeg
+call_analytics_chart.png
+sample_recording.mp3
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+*.tmp
+venv/
+.venv/
+
+# Deployment packages & archives
+*.zip
+*.tar.gz
+*.rar
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.gemini/
+

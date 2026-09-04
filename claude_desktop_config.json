@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "omnidim-voice-ai": {
+      "command": "python",
+      "args": [
+        "c:\\Users\\SURAJ\\Documents\\Coding space\\omnidim_hub\\omnidim_mcp_server.py"
+      ],
+      "env": {
+        "OMNIDIM_API_KEY": "53lx9WsjS8dtsHYV7qhnjOUmwKTJmEZOTYipMKIgNmw",
+        "OMNIDIM_BASE_URL": "https://backend.omnidim.io/api/v1"
+      }
+    }
+  }
+}

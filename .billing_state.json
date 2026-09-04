@@ -1,0 +1,61 @@
+{
+  "rate_per_minute": 0.115,
+  "whatsapp_rate_per_msg": 0.006,
+  "sms_rate_per_msg": 0.006,
+  "kb_used_mb": 0.0,
+  "kb_total_mb": 5.0,
+  "auto_recharge": false,
+  "plans": {
+    "Starter": {
+      "price": 15,
+      "mins": 179,
+      "rate": 0.084,
+      "kb": "5 MB",
+      "team": 1
+    },
+    "Jump Starter": {
+      "price": 30,
+      "mins": 395,
+      "rate": 0.076,
+      "kb": "10 MB",
+      "team": 2
+    },
+    "Early Deployers": {
+      "price": 36,
+      "mins": 588,
+      "rate": 0.068,
+      "kb": "50 MB",
+      "team": 5
+    },
+    "Growth": {
+      "price": 200,
+      "mins": 3571,
+      "rate": 0.056,
+      "kb": "100 MB",
+      "team": 10
+    },
+    "Enterprise": {
+      "price": "Custom",
+      "mins": "Custom",
+      "rate": "Up to $0.035",
+      "kb": "Custom",
+      "team": "Unlimited"
+    }
+  },
+  "accounts": {
+    "Himanshu Shah": {
+      "plan": "No active plan (Signup Gift)",
+      "balance_usd": 1.16,
+      "concurrency": 1,
+      "concurrency_type": "Permanent (Signup Gift)",
+      "concurrency_start": "Aug 26, 2026"
+    },
+    "Rocky Balboa": {
+      "plan": "No active plan (Signup Gift)",
+      "balance_usd": 1.16,
+      "concurrency": 1,
+      "concurrency_type": "Permanent (Signup Gift)",
+      "concurrency_start": "Aug 26, 2026"
+    }
+  }
+}

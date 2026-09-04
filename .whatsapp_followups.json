@@ -1,0 +1,16 @@
+[
+  {
+    "recipient": "+919811122233",
+    "customer_name": "Valued Customer",
+    "message": "Hello Valued Customer! \ud83c\udf99\ufe0f\n\nThank you for speaking with our Voice AI assistant.\n\n\ud83d\udccc *Summary of our call:* Call completed (0.00:12.00 duration).\n\nIf you have any questions, feel free to reply directly to this chat! Have a wonderful day.",
+    "status": "queued",
+    "timestamp": "2026-08-29 18:46:51"
+  },
+  {
+    "recipient": "+919876543210",
+    "customer_name": "Valued Customer",
+    "message": "Hello Valued Customer! \ud83c\udf99\ufe0f\n\nThank you for speaking with our Voice AI assistant.\n\n\ud83d\udccc *Summary of our call:* Call completed (0.00:11.00 duration).\n\nIf you have any questions, feel free to reply directly to this chat! Have a wonderful day.",
+    "status": "queued",
+    "timestamp": "2026-08-29 21:32:08"
+  }
+]

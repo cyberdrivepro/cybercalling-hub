@@ -1,0 +1,19 @@
+{
+  "burner_1788410452_636": {
+    "id": "burner_1788410452_636",
+    "name": "Burner-DarkAngel-1",
+    "api_key": "do734w9qviOoAhTw8Jejad1LF0jxhtyOew_DGRXYxa8",
+    "provider": "DarkAngel",
+    "agent_id": 248187,
+    "status": "ACTIVE",
+    "calls_made": 2,
+    "max_calls": 10,
+    "bound_proxy": "\ud83c\udde8\ud83c\udde6 http://217.181.90.93:3129 (Canada)",
+    "proxy_enforced": true,
+    "created_at": "2026-09-03 10:10:52",
+    "last_used": "2026-09-04 11:43:40",
+    "burned_at": null,
+    "proxy_url": "http://9rbd0ejqxiz3:bbuh7sigmw3b702@217.181.90.93:3129",
+    "latency_ms": 521
+  }
+}

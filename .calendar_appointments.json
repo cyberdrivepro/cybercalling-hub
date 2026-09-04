@@ -1,0 +1,13 @@
+[
+  {
+    "event_id": "evt_dcf476e5",
+    "customer_name": "Test User",
+    "phone_number": "+919876543210",
+    "slot_time": "Tomorrow 3 PM",
+    "topic": "Voice AI Demo & Onboarding",
+    "meet_link": "https://meet.google.com/647-5d70-f30",
+    "cal_link": "https://cal.com/omnidim/booking/evt_dcf476e5",
+    "status": "confirmed",
+    "created_at": "2026-08-28 10:28:31"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "omnivoice-ai-app",
+  "version": "1.0.0",
+  "description": "OmniDimension Voice AI Android Mobile App",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo Built"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/android": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0"
+  }
+}
